@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class Exem2 implements ActionListener{
+	JFrame jframe = new JFrame("Gas-Calculeter");//หน้าต่างโปรแกรม
+	JButton jbutton_program = new JButton(" Program ");
+	JButton jbutton_about = new JButton("About");
+	JLabel jlabel = new JLabel();
+	Exem2(){//ปรับแต่งหน้าแรก
+		jframe.setSize(200,100);
+		jframe.setLocationRelativeTo(null);
+		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jframe.add(jbutton_program,BorderLayout.CENTER);
+		jframe.add(jbutton_about,BorderLayout.CENTER);
+		jframe.add(jlabel,BorderLayout.CENTER);
+		jframe.setVisible(true);
+		jframe.add(jlabel,BorderLayout.CENTER);
+		//label.setBounds(50,100,100,50);
+		jlabel.setVerticalAlignment(JLabel.TOP);//จัดตำแหน่ง
+		jlabel.setHorizontalAlignment(JLabel.LEFT);
+		jlabel.setText("What is your name?");
+		jlabel.setFont(new Font("MV Boli",Font.PLAIN,15));
+		jlabel.setForeground(new Color(0x00FF00)); 
+		jlabel.setBackground(Color.black);
+		jlabel.setOpaque(true); 
+		
+		jbutton_program.setBounds(135,300,100,25);//ตำแหน่ง
+		jbutton_program.addActionListener(this);
+		jbutton_about.setBounds(135,350,100,25);
+		jbutton_about.addActionListener(this);
+		jbutton_program.setFont(new Font("MV Boli", Font.BOLD, 15));//ตัวอักษรปุ่ม
+		jbutton_about.setFont(new Font("MV Boli", Font.BOLD, 15));
+		jbutton_program.setForeground(Color.black);//สีตัวหนังสือ ปุ่ม
+		jbutton_about.setForeground(Color.black);
+		jbutton_program.setBackground(new Color(0x00FF00));//สีพื้นหลัง ปุ่ม
+		jbutton_about.setBackground(new Color(0x00FF00));
+	}
+	@Override
+	public void actionPerformed(ActionEvent e){//method
+		if(e.getSource()==jbutton_program ){
+			jframe.dispose();
+			@SuppressWarnings("unused")
+			Show window = new Show();
+		}
+	}
+}
